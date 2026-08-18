@@ -126,8 +126,15 @@ export default function Home() {
               className="font-semibold transition hover:text-[#D4AF37]"
             >
               Events
-            </Link>
+            </Link> 
 
+            <Link
+              href="/contact"
+              className="transition hover:text-[#D4AF37]"
+            >           
+              Contact
+            </Link>
+            
             <Link
               href="#"
               className="hidden font-medium transition hover:text-[#D4AF37] md:block"
@@ -362,17 +369,17 @@ export default function Home() {
               </Link>
 
               <Link
-                href="#"
-                className="transition hover:text-[#D4AF37]"
-              >
-                About
+                href="/contact"
+                className="font-semibold transition hover:text-[#D4AF37]"
+              >  
+                Contact
               </Link>
 
               <Link
                 href="#"
                 className="transition hover:text-[#D4AF37]"
               >
-                Contact
+                About
               </Link>
 
             </div>
