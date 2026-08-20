@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { events } from "../../events";
 
 type EventPageProps = {
@@ -12,11 +13,78 @@ export default async function EventPage({ params }: EventPageProps) {
 
   if (!event) {
     return (
-      <main className="min-h-screen bg-gray-100 p-10 text-black">
-        <h1 className="text-5xl font-bold">Event not found</h1>
-        <p className="mt-4 text-lg text-gray-800">
-          Sorry, we couldn't find that event.
-        </p>
+      <main className="min-h-screen bg-gray-100 text-black">
+
+        {/* HEADER */}
+        <header className="bg-black text-white">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+
+            <Link
+              href="/"
+              className="text-3xl font-bold tracking-wide"
+            >
+              <span className="text-[#D4AF37]">GC</span> TICKETS
+            </Link>
+
+            <nav className="flex items-center gap-8 text-lg">
+
+              <Link
+                href="/events"
+                className="font-semibold transition hover:text-[#D4AF37]"
+              >
+                Events
+              </Link>
+
+              <Link
+                href="/about"
+                className="font-semibold transition hover:text-[#D4AF37]"
+              >
+                About
+              </Link>
+
+              <Link
+                href="/contact"
+                className="font-semibold transition hover:text-[#D4AF37]"
+              >
+                Contact
+              </Link>
+
+              <Link
+                href="#"
+                className="hidden font-semibold transition hover:text-[#D4AF37] md:block"
+              >
+                My Tickets
+              </Link>
+
+            </nav>
+
+            <button
+              type="button"
+              className="hidden rounded-lg border border-[#D4AF37] px-5 py-2 font-semibold text-[#D4AF37] transition hover:bg-[#D4AF37] hover:text-black md:block"
+            >
+              Login
+            </button>
+
+          </div>
+        </header>
+
+        <section className="mx-auto max-w-7xl px-6 py-20">
+          <h1 className="text-5xl font-bold">
+            Event not found
+          </h1>
+
+          <p className="mt-4 text-lg text-gray-800">
+            Sorry, we couldn't find that event.
+          </p>
+
+          <Link
+            href="/events"
+            className="mt-8 inline-flex rounded-xl bg-black px-7 py-4 font-bold text-white transition hover:bg-[#D4AF37] hover:text-black"
+          >
+            Back to Events
+          </Link>
+        </section>
+
       </main>
     );
   }
@@ -28,37 +96,51 @@ export default async function EventPage({ params }: EventPageProps) {
       <header className="bg-black text-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
 
-          <a
+          <Link
             href="/"
             className="text-3xl font-bold tracking-wide"
           >
             <span className="text-[#D4AF37]">GC</span> TICKETS
-          </a>
+          </Link>
 
           <nav className="flex items-center gap-8 text-lg">
 
-            <a
+            <Link
               href="/events"
               className="font-semibold text-[#D4AF37]"
             >
               Events
-            </a>
+            </Link>
 
-            <a
-              href="#"
-              className="hidden font-medium transition hover:text-[#D4AF37] md:block"
+            <Link
+              href="/about"
+              className="font-semibold transition hover:text-[#D4AF37]"
             >
               About
-            </a>
+            </Link>
 
-            <a
+            <Link
+              href="/contact"
+              className="font-semibold transition hover:text-[#D4AF37]"
+            >
+              Contact
+            </Link>
+
+            <Link
               href="#"
-              className="hidden font-medium transition hover:text-[#D4AF37] md:block"
+              className="hidden font-semibold transition hover:text-[#D4AF37] md:block"
             >
               My Tickets
-            </a>
+            </Link>
 
           </nav>
+
+          <button
+            type="button"
+            className="hidden rounded-lg border border-[#D4AF37] px-5 py-2 font-semibold text-[#D4AF37] transition hover:bg-[#D4AF37] hover:text-black md:block"
+          >
+            Login
+          </button>
 
         </div>
       </header>
@@ -69,12 +151,12 @@ export default async function EventPage({ params }: EventPageProps) {
 
         <div className="mx-auto max-w-7xl">
 
-          <a
+          <Link
             href="/events"
             className="text-base font-medium text-gray-300 transition hover:text-[#D4AF37]"
           >
             ← Back to all events
-          </a>
+          </Link>
 
           <div className="mt-12">
 
@@ -123,7 +205,7 @@ export default async function EventPage({ params }: EventPageProps) {
             </h2>
 
             <p className="mt-7 max-w-3xl text-xl leading-relaxed text-gray-800">
-              Get ready for{" "}
+              GC Tickets currently has tickets available for{" "}
               <strong className="font-bold text-black">
                 {event.name}
               </strong>
@@ -131,8 +213,9 @@ export default async function EventPage({ params }: EventPageProps) {
             </p>
 
             <p className="mt-5 max-w-3xl text-lg leading-relaxed text-gray-800">
-              Secure your tickets through GC Tickets and get ready
-              for an unforgettable event.
+              If you're interested in attending, get in touch with
+              GC Tickets directly and we'll let you know what
+              tickets are currently available.
             </p>
 
 
@@ -179,8 +262,8 @@ export default async function EventPage({ params }: EventPageProps) {
               </h3>
 
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-gray-300">
-                Find the tickets you need for the events you don't
-                want to miss.
+                Looking for tickets? Contact GC Tickets directly
+                and we'll help you find out what's available.
               </p>
 
             </div>
@@ -188,7 +271,7 @@ export default async function EventPage({ params }: EventPageProps) {
           </div>
 
 
-          {/* TICKET BOX */}
+          {/* TICKET ENQUIRY BOX */}
           <div>
 
             <div className="sticky top-8 overflow-hidden rounded-2xl bg-white shadow-xl">
@@ -199,91 +282,67 @@ export default async function EventPage({ params }: EventPageProps) {
               <div className="p-8">
 
                 <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#B18D22]">
-                  Tickets
+                  Tickets Available
                 </p>
 
                 <h2 className="mt-3 text-4xl font-bold text-black">
-                  Get your tickets
+                  Interested in tickets?
                 </h2>
 
-                <p className="mt-3 text-base text-gray-700">
-                  Select your ticket below.
+                <p className="mt-4 text-base leading-relaxed text-gray-700">
+                  GC Tickets handles ticket enquiries directly.
+                  Send us a message and we'll confirm availability
+                  and pricing.
                 </p>
 
 
-                {/* TICKET */}
+                {/* EVENT SUMMARY */}
                 <div className="mt-8 rounded-xl border-2 border-gray-200 p-6">
 
-                  <div className="flex items-start justify-between gap-4">
-
-                    <div>
-
-                      <h3 className="text-xl font-bold text-black">
-                        General Admission
-                      </h3>
-
-                      <p className="mt-2 text-sm text-gray-700">
-                        Standard entry
-                      </p>
-
-                    </div>
-
-                    <p className="text-2xl font-bold text-black">
-                      £25
-                    </p>
-
-                  </div>
-
-
-                  {/* QUANTITY */}
-                  <div className="mt-8 flex items-center justify-between">
-
-                    <p className="font-bold text-black">
-                      Quantity
-                    </p>
-
-                    <div className="flex items-center gap-4">
-
-                      <button className="h-11 w-11 rounded-lg border-2 border-gray-300 text-xl font-bold text-black transition hover:border-[#D4AF37]">
-                        −
-                      </button>
-
-                      <span className="w-6 text-center text-lg font-bold text-black">
-                        1
-                      </span>
-
-                      <button className="h-11 w-11 rounded-lg border-2 border-gray-300 text-xl font-bold text-black transition hover:border-[#D4AF37]">
-                        +
-                      </button>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-
-                {/* TOTAL */}
-                <div className="mt-8 flex items-center justify-between border-t-2 border-gray-200 pt-6">
-
-                  <p className="text-xl font-bold text-black">
-                    Total
+                  <p className="text-sm font-bold uppercase tracking-wider text-gray-600">
+                    Event
                   </p>
 
-                  <p className="text-3xl font-bold text-black">
-                    £25
+                  <h3 className="mt-2 text-xl font-bold text-black">
+                    {event.name}
+                  </h3>
+
+                  <p className="mt-4 text-sm text-gray-700">
+                    📅 {event.date}
+                  </p>
+
+                  <p className="mt-2 text-sm text-gray-700">
+                    📍 {event.location}
                   </p>
 
                 </div>
 
 
-                {/* BUY BUTTON */}
-                <button className="mt-8 w-full rounded-xl bg-black px-6 py-5 text-xl font-bold text-white transition hover:bg-[#D4AF37] hover:text-black">
-                  Buy Tickets
-                </button>
+                {/* CONTACT BUTTONS */}
+                <div className="mt-8 space-y-3">
 
-                <p className="mt-5 text-center text-sm text-gray-600">
-                  Secure checkout · Instant confirmation
+                  <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex w-full items-center justify-center rounded-xl bg-black px-6 py-4 text-lg font-bold text-white transition hover:bg-[#D4AF37] hover:text-black"
+                  >
+                    Message us on Instagram
+                  </a>
+
+                  <a
+                    href="https://wa.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex w-full items-center justify-center rounded-xl border-2 border-black px-6 py-4 text-lg font-bold text-black transition hover:bg-black hover:text-white"
+                  >
+                    Message us on WhatsApp
+                  </a>
+
+                </div>
+
+                <p className="mt-5 text-center text-sm text-gray-500">
+                  Enquiries are handled directly by GC Tickets.
                 </p>
 
               </div>
@@ -306,9 +365,12 @@ export default async function EventPage({ params }: EventPageProps) {
 
             <div>
 
-              <div className="text-3xl font-bold">
+              <Link
+                href="/"
+                className="text-3xl font-bold"
+              >
                 <span className="text-[#D4AF37]">GC</span> TICKETS
-              </div>
+              </Link>
 
               <p className="mt-3 text-gray-300">
                 No Event Is Ever Sold Out
@@ -318,26 +380,26 @@ export default async function EventPage({ params }: EventPageProps) {
 
             <div className="flex gap-8 text-gray-300">
 
-              <a
+              <Link
                 href="/events"
                 className="transition hover:text-[#D4AF37]"
               >
                 Events
-              </a>
+              </Link>
 
-              <a
-                href="#"
+              <Link
+                href="/about"
                 className="transition hover:text-[#D4AF37]"
               >
                 About
-              </a>
+              </Link>
 
-              <a
-                href="#"
+              <Link
+                href="/contact"
                 className="transition hover:text-[#D4AF37]"
               >
                 Contact
-              </a>
+              </Link>
 
             </div>
 

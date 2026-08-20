@@ -1,11 +1,11 @@
 services:
     gc-tickets:
-      image: node:22
-      container_name: gc-tickets
-      working_dir: /app
-      ports:
+        image: node:22
+        container_name: gc-tickets
+        working_dir: /app
+        ports:
         - "3000:3000"
-      volumes:
+        volumes:
           - .:/app
           - /app/node_modules
-      command: sh -c "npm install && npm run dev"
+        command: sh -c "npm install && npm run dev"
