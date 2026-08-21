@@ -15,59 +15,6 @@ export default async function EventPage({ params }: EventPageProps) {
     return (
       <main className="min-h-screen bg-gray-100 text-black">
 
-        {/* HEADER */}
-        <header className="bg-black text-white">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-
-            <Link
-              href="/"
-              className="text-3xl font-bold tracking-wide"
-            >
-              <span className="text-[#D4AF37]">GC</span> TICKETS
-            </Link>
-
-            <nav className="flex items-center gap-8 text-lg">
-
-              <Link
-                href="/events"
-                className="font-semibold transition hover:text-[#D4AF37]"
-              >
-                Events
-              </Link>
-
-              <Link
-                href="/about"
-                className="font-semibold transition hover:text-[#D4AF37]"
-              >
-                About
-              </Link>
-
-              <Link
-                href="/contact"
-                className="font-semibold transition hover:text-[#D4AF37]"
-              >
-                Contact
-              </Link>
-
-              <Link
-                href="#"
-                className="hidden font-semibold transition hover:text-[#D4AF37] md:block"
-              >
-                My Tickets
-              </Link>
-
-            </nav>
-
-            <button
-              type="button"
-              className="hidden rounded-lg border border-[#D4AF37] px-5 py-2 font-semibold text-[#D4AF37] transition hover:bg-[#D4AF37] hover:text-black md:block"
-            >
-              Login
-            </button>
-
-          </div>
-        </header>
-
         <section className="mx-auto max-w-7xl px-6 py-20">
           <h1 className="text-5xl font-bold">
             Event not found
@@ -354,64 +301,6 @@ export default async function EventPage({ params }: EventPageProps) {
         </div>
 
       </section>
-
-
-      {/* FOOTER */}
-      <footer className="bg-black px-6 py-12 text-white">
-
-        <div className="mx-auto max-w-7xl">
-
-          <div className="flex flex-col justify-between gap-8 md:flex-row">
-
-            <div>
-
-              <Link
-                href="/"
-                className="text-3xl font-bold"
-              >
-                <span className="text-[#D4AF37]">GC</span> TICKETS
-              </Link>
-
-              <p className="mt-3 text-gray-300">
-                No Event Is Ever Sold Out
-              </p>
-
-            </div>
-
-            <div className="flex gap-8 text-gray-300">
-
-              <Link
-                href="/events"
-                className="transition hover:text-[#D4AF37]"
-              >
-                Events
-              </Link>
-
-              <Link
-                href="/about"
-                className="transition hover:text-[#D4AF37]"
-              >
-                About
-              </Link>
-
-              <Link
-                href="/contact"
-                className="transition hover:text-[#D4AF37]"
-              >
-                Contact
-              </Link>
-
-            </div>
-
-          </div>
-
-          <div className="mt-10 border-t border-gray-800 pt-6 text-sm text-gray-500">
-            © 2026 GC Tickets. All rights reserved.
-          </div>
-
-        </div>
-
-      </footer>
 
     </main>
   );

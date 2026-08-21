@@ -1,11 +1,43 @@
 services:
-    gc-tickets:
-        image: node:22
-        container_name: gc-tickets
-        working_dir: /app
-        ports:
-        - "3000:3000"
-        volumes:
-          - .:/app
-          - /app/node_modules
-        command: sh -c "npm install && npm run dev"
+
+  gc-tickets:
+    image: node:22
+    container_name: gc-tickets
+    working_dir: /app
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+    depends_on:
+      - postgres
+
+    environment:
+      DATABASE_URL: postgresql://gc_tickets:gc_tickets_password@postgres:5432/gc_tickets
+
+    command: sh -c "npm install && npm run dev"
+
+
+  postgres:
+    image: postgres:16
+    container_name: gc-tickets-postgres
+
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: gc_tickets
+      POSTGRES_PASSWORD: gc_tickets_password
+      POSTGRES_DB: gc_tickets
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+
+volumes:
+  postgres_data:

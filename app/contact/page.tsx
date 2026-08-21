@@ -13,48 +13,6 @@ setSent(true);
 
 return ( <main className="min-h-screen bg-gray-100 text-black">
 
-```
-  <header className="bg-black text-white">
-    <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-
-      <Link
-        href="/"
-        className="text-3xl font-bold tracking-wide"
-      >
-        <span className="text-[#D4AF37]">GC</span> TICKETS
-      </Link>
-
-      <nav className="flex items-center gap-8 text-lg">
-        <Link
-          href="/events"
-          className="font-semibold transition hover:text-[#D4AF37]"
-        >
-          Events
-        </Link>
-
-        <Link
-          href="/about"
-          className="font-semibold transition hover:text-[#D4AF37]"
-        >
-          About
-        </Link>
-
-        <Link
-          href="#"
-          className="hidden font-medium transition hover:text-[#D4AF37] md:block"
-        >
-          My Tickets
-        </Link>
-      </nav>
-
-      <button className="hidden rounded-lg border border-[#D4AF37] px-5 py-2 font-semibold text-[#D4AF37] transition hover:bg-[#D4AF37] hover:text-black md:block">
-        Login
-      </button>
-
-    </div>
-  </header>
-
-
   <section className="bg-black px-6 pb-24 pt-20 text-white">
     <div className="mx-auto max-w-7xl">
 
@@ -338,60 +296,6 @@ return ( <main className="min-h-screen bg-gray-100 text-black">
     </div>
 
   </section>
-
-
-  <footer className="bg-black px-6 pb-10 text-white">
-
-    <div className="mx-auto max-w-7xl border-t border-gray-800 pt-10">
-
-      <div className="flex flex-col justify-between gap-8 md:flex-row">
-
-        <div>
-
-          <div className="text-3xl font-bold">
-            <span className="text-[#D4AF37]">GC</span> TICKETS
-          </div>
-
-          <p className="mt-3 text-gray-300">
-            No Event Is Ever Sold Out
-          </p>
-
-        </div>
-
-        <div className="flex gap-8 text-gray-300">
-
-          <Link
-            href="/events"
-            className="transition hover:text-[#D4AF37]"
-          >
-            Events
-          </Link>
-
-          <Link
-            href="/about"
-            className="transition hover:text-[#D4AF37]"
-          >
-            About
-          </Link>
-
-          <Link
-            href="/contact"
-            className="text-[#D4AF37]"
-          >
-            Contact
-          </Link>
-
-        </div>
-
-      </div>
-
-      <p className="mt-10 text-sm text-gray-500">
-        © 2026 GC Tickets. All rights reserved.
-      </p>
-
-    </div>
-
-  </footer>
 
 </main>
 
